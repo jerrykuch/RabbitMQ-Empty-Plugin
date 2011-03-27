@@ -63,7 +63,7 @@ Now move back up into rabbitmq-server:
 Make a plugins directory and the following symbolic links:
 
      mkdir plugins
-
+     cd plugins
      ln -s ../../RabbitMQ-Empty-Plugin
      ln -s ../../rabbitmq-erlang-client
 
