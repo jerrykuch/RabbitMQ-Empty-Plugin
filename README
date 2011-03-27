@@ -23,6 +23,79 @@ Or:
 Good luck!
 
 
+USAGE:
+------
+
+These instructions assume you have an Erlang environment that's
+contemporary as of this writing.  Anything in the R14 series of
+releases should be fine.
+
+To build this plugin, you'll have to check out the RabbitMQ "public umbrella".
+
+Clone the public umbrella from the GitHub mirror of the RabbitMQ sources with:
+
+    git clone https://github.com/rabbitmq/rabbitmq-public-umbrella.git
+
+Then:
+
+    cd rabbitmq-public-umbrella
+    make co
+
+Once the checkout completes, build your vanilla Rabbit with:
+
+    make
+
+This will sanity check your build environment, and give you a Rabbit
+you can build and run the plugin against.
+
+Now, still under the rabbitmq-public-umbrella, clone the empty plugin:
+
+     git clone git@github.com:jerrykuch/RabbitMQ-Empty-Plugin.git
+
+Change into the RabbitMQ-Empty-Plugin directory and type:
+
+     make
+
+Now move back up into rabbitmq-server:
+
+     cd ../rabbitmq-server
+
+Make a plugins directory and the following symbolic links:
+
+     mkdir plugins
+
+     ln -s ../../RabbitMQ-Empty-Plugin
+     ln -s ../../rabbitmq-erlang-client
+
+Now go back up to your rabbitmq-server directory and start the broker:
+
+     cd ..
+     make run
+
+In the broker startup preamble you should see:
+
+   Activating RabbitMQ plugins ...
+   2 plugins activated:
+   * rabbit_empty_plugin-0.1.0
+   * amqp_client-0.0.0
+
+If at the RabbitMQ broker Erlang REPL you type:
+
+   appmon:start().
+
+You'll see the broker's application tree including
+rabbit_empty_plugin.  Click on rabbit_empty_plugin and you'll see the
+empty plugin's supervisory tree.
+
+To mutate this plugin for your own use look for the string 'empty' in
+the .erl source files and the OTP .app file.  The code is small, and
+other than start itself up with the given supervisory structure and
+policy, it doesn't do anything real, but that's to make it easy for
+you to use it as a starting point for your own plugins, without having
+to scrape out too much extraneousness you don't care about.
+
+
+
 THIRD PARTY LICENSES:
 ---------------------
 
