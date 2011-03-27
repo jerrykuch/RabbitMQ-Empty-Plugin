@@ -1,0 +1,41 @@
+DESCRIPTION:
+------------
+
+This directory contains a pretty much empty RabbitMQ plugin.  It
+should work with RabbitMQ brokers in the 2.3.x to 2.4.x version range,
+at a minimum.
+
+I whipped it up as a placeholder since the plugin authoring guide on
+the RabbitMQ web site is now a bit out of date, and the sample
+discussed there, the metronome plugin, doesn't work with current
+Rabbits.  The guide and the example should be updated in the
+relatively near future, but until then, they have a chance of
+confusing someone trying to work with them.
+
+With questions or comments, please bug:
+
+     jerrykuch VIA gmail.com
+
+Or:
+
+     jerry VIA rabbitmq.com
+
+Good luck!
+
+
+THIRD PARTY LICENSES:
+---------------------
+
+None.
+
+
+DISCLAIMER:
+-----------
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
